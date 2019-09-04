@@ -15,64 +15,15 @@ class MovieCart extends Component {
         }
         return (
             <div>
-                <table border = "1">
+                <table>
                     <tbody>
                         <tr>
                             <th></th>
                             <th>Title</th>
                             <th>Cost</th>
                         </tr>
-                            {this.props.items.map((movie, index) => {
+                            {/* {this.props.items.map((movie, index) => {
                                 console.log(this);
-                                return <tr key= {index}>
-                                    <button>Remove</button>
-                                    <td>{movie.title}</td>
-                                    <td>{movie.cost}</td>
-                                </tr>
-                            })}
-                            {/* {this.props.items.comedy.map((movie, index) => {
-                                return <tr key= {index}>
-                                    <button>Remove</button>
-                                    <td>{movie.title}</td>
-                                    <td>{movie.cost}</td>
-                                </tr>
-                            })}
-                            {this.props.items.documentary.map((movie, index) => {
-                                return <tr key= {index}>
-                                    <button>Remove</button>
-                                    <td>{movie.title}</td>
-                                    <td>{movie.cost}</td>
-                                </tr>
-                            })}
-                            {this.props.items.drama.map((movie, index) => {
-                                return <tr key= {index}>
-                                    <button>Remove</button>
-                                    <td>{movie.title}</td>
-                                    <td>{movie.cost}</td>
-                                </tr>
-                            })}
-                            {this.props.items.horror.map((movie, index) => {
-                                return <tr key= {index}>
-                                    <button>Remove</button>
-                                    <td>{movie.title}</td>
-                                    <td>{movie.cost}</td>
-                                </tr>
-                            })}
-                            {this.props.items.romance.map((movie, index) => {
-                                return <tr key= {index}>
-                                    <button>Remove</button>
-                                    <td>{movie.title}</td>
-                                    <td>{movie.cost}</td>
-                                </tr>
-                            })}
-                            {this.props.items.scifi.map((movie, index) => {
-                                return <tr key= {index}>
-                                    <button>Remove</button>
-                                    <td>{movie.title}</td>
-                                    <td>{movie.cost}</td>
-                                </tr>
-                            })}
-                            {this.props.items.thriller.map((movie, index) => {
                                 return <tr key= {index}>
                                     <button>Remove</button>
                                     <td>{movie.title}</td>

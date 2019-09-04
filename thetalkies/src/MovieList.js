@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
 //original json in data.js
 const movies = {
     "action": [{
@@ -559,18 +558,32 @@ const movies = {
     ]
 }
 
-const genre = Object.keys(movies)
-console.log(genre);
+// const genre = Object.keys(movies)
+// console.log(genre);
 
-const titles = Object.values(movies)
-console.log(titles);
+// const titles = Object.values(movies)
+// console.log(titles);
 
 
 class MovieList extends Component {
     render () {
+        // const { action, comedy, documentary, drama, horror, romance, scifi, thriller } = this.props
+        
+        // if (Object.keys(movies) === 0) {
+        //     return null
+        // }
+
         return (
             <div>
-                <table border = "1">
+                
+
+                {/* {documentary.map((movie, index) => {
+                    return <p>{movie.title}</p>
+                })} */}
+
+
+
+                {/* <table border = "1">
                     <tbody>
                         <tr>
                             <th>Genre</th>
@@ -589,8 +602,8 @@ class MovieList extends Component {
                             return <tr key= {index}>
                                 <td>{movie[index].title}</td>
                             </tr>
-                        })}
-                        {movies.action.map((movie, index) => {
+                        })} */}
+                        {/* {movies.action.map((movie, index) => {
                             return <tr key= {index}>
                                 <button onClick={ () => this.props.addToCart()}>
                                     Purchase
@@ -608,14 +621,7 @@ class MovieList extends Component {
                                 <td>{movie.cost}</td>
                             </tr>
                         })}
-                        {movies.documentary.map((movie, index) => {
-                            return <tr key= {index}>
-                                <button>Purchase</button>
-                                <td>{movie.title}</td>
-                                <td>{movie.rating}</td>
-                                <td>{movie.cost}</td>
-                            </tr>
-                        })}
+                        
                         {movies.drama.map((movie, index) => {
                             return <tr key= {index}>
                                 <button>Purchase</button>
@@ -658,7 +664,7 @@ class MovieList extends Component {
                         })}
                         
                     </tbody>    
-                </table>
+                </table> */}
             </div>
         );
     }
