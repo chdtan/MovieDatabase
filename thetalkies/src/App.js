@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import MovieList from "./MovieList.js";
 import MovieCart from "./MovieCart.js";
-// import MovieData from "./available_movies.json"
+import JSONData from './available_movies.json';
+
 
 class App extends Component {
   constructor() {
@@ -11,28 +12,32 @@ class App extends Component {
       item: null,
       cart: [],
       credit: 100,
-      movies: {}
+      movies: JSONData || {},
     }
+    console.log(this.state.movies)
   }
 
-  componentDidMount(){
-    fetch("./available_movies.json")
-      .then(result => {
-        return result.json();
-      }).then(data => {
-        console.log('data:', data)
-      })
-  }
+  
+  // componentDidMount(){
+  //   fetch(movieData)
+  //   .then(result => {
+  //       return result.json();
+  //     }).then(data => {
+  //       console.log('data:', data)
+  //     })
+  // }
 
   addToCart = item => {
     const cart = [...this.state.cart, item];
     console.log('item:', item)
     this.setState({ cart });
+    
   }
   
 
   render () {
     return (
+      
       <div className="App">
         <header>
           <h1>Welcome to the Talkies</h1>

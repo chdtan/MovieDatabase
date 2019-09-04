@@ -120,6 +120,7 @@ section {
 body {
   line-height: 1;
   border: solid 1px white;
+  color: white;
 }
 
 ol,
