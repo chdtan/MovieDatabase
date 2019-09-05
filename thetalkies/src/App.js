@@ -11,10 +11,9 @@ class App extends Component {
     this.state = {
       item: null,
       cart: [],
-      credit: 100,
-      movies: JSONData || {},
+      movies: JSONData || [],
     }
-    console.log(this.state.movies)
+    console.log(this.state.cart)
   }
 
   
@@ -27,11 +26,11 @@ class App extends Component {
   //     })
   // }
 
-  addToCart = item => {
-    const cart = [...this.state.cart, item];
-    console.log('item:', item)
+  addToCart = movie => {
+    console.log('item:', movie)
+    const cart = [...this.state.cart, movie];
+    console.log(cart);
     this.setState({ cart });
-    
   }
   
 
@@ -44,7 +43,7 @@ class App extends Component {
         </header>
         <div>
           <MovieList addToCart={this.addToCart} movies={this.state.movies}/>
-          <MovieCart items={this.state.cart} credit={this.state.credit} /> 
+          <MovieCart item={this.state.cart} credit={this.state.credit} /> 
         </div>
       </div>
       

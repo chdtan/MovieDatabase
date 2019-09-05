@@ -2,41 +2,43 @@ import React, { Component } from 'react';
 import './App.css';
 
 class MovieCart extends Component {
-    total(){
-        return this.props.items.reduce((total, item) => {
-            return total - item.cost
+    constructor() {
+        super()
+        this.state = {
+            credit: []
+        }
+    }
+    
+    
+    total = () => {
+        return this.props.item.reduce((total, item) => { return (total === 0) ? "Not enough credit remaining to purchase this movie" : total - item.cost
         }, 100)
     }
+
     render () {
-        if (this.props.items === 0) {
+        
+        const item = this.props.item
+    
+        if (item.length === 0) {
             return <div>
                 <p>Your cart is empty</p>
             </div>
         }
+
         return (
             <div>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th></th>
-                            <th>Title</th>
-                            <th>Cost</th>
-                        </tr>
-                            {/* {this.props.items.map((movie, index) => {
-                                console.log(this);
-                                return <tr key= {index}>
-                                    <button>Remove</button>
-                                    <td>{movie.title}</td>
-                                    <td>{movie.cost}</td>
-                                </tr>
-                            })} */}
-                    </tbody>    
-                </table>
+                {item.map((movie, index) => {
+                    return <div key= {index}>
+                        <button>Remove</button>
+                        <p>{movie.title}</p>
+                        <p>{movie.cost}</p>
+                    </div>
+                })}
 
-                <p>
-                    Total: {this.total()}
-                </p>
-            </div>
+            <p> Credits remaining: {this.total()}
+            </p>    
+            </div>    
+            
         );
     }
 }

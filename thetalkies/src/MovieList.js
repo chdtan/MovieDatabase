@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
-import MovieData from './MovieData';
+// import MovieData from './MovieData';
 
 class MovieList extends Component {
     render () {
         const { movies } = this.props
         const { action, comedy, documentary, drama, horror, romance, scifi, thriller } = this.props.movies
+
+        if (this.props.addToCart === 0) {
+            return null
+        }
+
+        const { addToCart } = this.props
         
         
         if (Object.keys(movies) === 0) {
             return null
-        } console.log(Object.keys(movies));
+        };
 
         return (
             <div>
@@ -20,7 +26,8 @@ class MovieList extends Component {
                 {action.map((movie, index) => {
                     return <div>
                             {/* <MovieData genre={this.props.movies}/> */}
-                            <MovieData cart={this.addToCart} />
+                            <button onClick = {() => addToCart(movie)}
+                            >Purchase</button>
                             <p>{movie.title}</p>
                             <p>{movie.rating}</p>
                             <p>{movie.cost}</p>  
@@ -29,7 +36,8 @@ class MovieList extends Component {
                 {comedy.map((movie, index) => {
                     return <div>
                             {/* <MovieData genre={this.props.movies}/> */}
-                            <MovieData cart={this.addToCart}/>
+                            <button onClick = {() => addToCart(movie)}
+                            >Purchase</button>
                             <p>{movie.title}</p>
                             <p>{movie.rating}</p>
                             <p>{movie.cost}</p>  
@@ -38,7 +46,7 @@ class MovieList extends Component {
                 {documentary.map((movie, index) => {
                     return <div>
                             {/* <MovieData genre={this.props.movies}/> */}
-                            <MovieData cart={this.addToCart} />
+                            <button onClick = {() => addToCart(movie)}>Purchase</button>
                             <p>{movie.title}</p>
                             <p>{movie.rating}</p>
                             <p>{movie.cost}</p>  
@@ -47,7 +55,7 @@ class MovieList extends Component {
                 {drama.map((movie, index) => {
                     return <div>
                             {/* <MovieData genre={this.props.movies}/> */}
-                            <MovieData cart={this.addToCart}/>
+                            <button onClick = {() => addToCart(movie)}>Purchase</button>
                             <p>{movie.title}</p>
                             <p>{movie.rating}</p>
                             <p>{movie.cost}</p>  
@@ -56,7 +64,7 @@ class MovieList extends Component {
                 {horror.map((movie, index) => {
                     return <div>
                             {/* <MovieData genre={this.props.movies}/> */}
-                            <MovieData cart={this.addToCart} />
+                            <button onClick = {() => addToCart(movie)}>Purchase</button>
                             <p>{movie.title}</p>
                             <p>{movie.rating}</p>
                             <p>{movie.cost}</p>  
@@ -65,7 +73,7 @@ class MovieList extends Component {
                 {romance.map((movie, index) => {
                     return <div>
                             {/* <MovieData genre={this.props.movies}/> */}
-                            <MovieData cart={this.addToCart} />
+                            <button onClick = {() => addToCart(movie)}>Purchase</button>
                             <p>{movie.title}</p>
                             <p>{movie.rating}</p>
                             <p>{movie.cost}</p>  
@@ -74,7 +82,7 @@ class MovieList extends Component {
                 {scifi.map((movie, index) => {
                     return <div>
                             {/* <MovieData genre={this.props.movies}/> */}
-                            <MovieData cart={this.addToCart} />
+                            <button onClick = {() => addToCart(movie)}>Purchase</button>
                             <p>{movie.title}</p>
                             <p>{movie.rating}</p>
                             <p>{movie.cost}</p>  
@@ -83,7 +91,7 @@ class MovieList extends Component {
                 {thriller.map((movie, index) => {
                     return <div>
                             {/* <MovieData genre={this.props.genre}/> */}
-                            <MovieData cart={this.addToCart} />
+                            <button onClick = {() => addToCart(movie)}>Purchase</button>
                             <p>{movie.title}</p>
                             <p>{movie.rating}</p>
                             <p>{movie.cost}</p>  
@@ -112,7 +120,7 @@ class MovieList extends Component {
                         })} */}
                         {/* {genre.action.map((movie, index) => {
                             return <tr key= {index}>
-                                <button onClick={ () => this.props.addToCart()}>
+                                <button onClick={ () => this.props.props.addToCart()}>
                                     Purchase
                                     </button>
                                 <td>{movie.title}</td>

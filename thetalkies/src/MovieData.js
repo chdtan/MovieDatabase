@@ -1,9 +1,11 @@
 import React from 'react'
 
 const MovieData = (props) => {
+
+
     return (
         <div>
-            <button onClick = {props.addtoCart}>Purchase</button>
+            <button onClick = {() => this.props.addtoCart(item)}>Purchase</button>
         </div>
     )
 
