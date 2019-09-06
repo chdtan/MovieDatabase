@@ -14,6 +14,7 @@ class MovieCart extends Component {
         return this.props.item.reduce((total, item) => { return (total === 0) ? "Not enough credit remaining to purchase this movie" : total - item.cost
         }, 100)
     }
+    
 
     render () {
         
@@ -26,12 +27,12 @@ class MovieCart extends Component {
         }
 
         return (
-            <div>
+            <div className="cart">
                 {item.map((movie, index) => {
-                    return <div key= {index}>
-                        <button>Remove</button>
+                    return <div className="checkout" key= {index}>
                         <p>{movie.title}</p>
-                        <p>{movie.cost}</p>
+                        <p>Cost: {movie.cost} Credits</p>
+                        <button>Remove</button>
                     </div>
                 })}
 

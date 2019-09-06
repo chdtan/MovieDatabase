@@ -32,6 +32,10 @@ class App extends Component {
     console.log(cart);
     this.setState({ cart });
   }
+
+  // removeFromCart = movie => {
+    
+  // }
   
 
   render () {
@@ -40,10 +44,10 @@ class App extends Component {
       <div className="App">
         <header>
           <h1>Welcome to the Talkies</h1>
-        </header>
-        <div>
-          <MovieList addToCart={this.addToCart} movies={this.state.movies}/>
           <MovieCart item={this.state.cart} credit={this.state.credit} /> 
+        </header>
+        <div className= "movie-catalogue">
+          <MovieList addToCart={this.addToCart} movies={this.state.movies}/>
         </div>
       </div>
       
